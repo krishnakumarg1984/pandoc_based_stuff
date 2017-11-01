@@ -43,7 +43,7 @@ function coolTools() {
 
 ------------------
 
-![Picture of lens](pexels_photo.jpeg)
+![Picture of lens](pexels_photo.jpeg){#fig:lens}
 
 ## Going to sleep
 
@@ -97,4 +97,7 @@ $$ \pi = 3.141592653589793238462643\dots $$ {#eq:}
 | Afriend | 22   | 250  |
 | Benemy  | 24   | 450  |
 | Marco   | 180  | 243  |
+Table: Caption. {#tbl:id}
 
+Exercise #
+Exercise #
