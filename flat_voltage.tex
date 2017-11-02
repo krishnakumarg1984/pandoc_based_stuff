@@ -1,0 +1,69 @@
+% vim: set nospell nowrap textwidth=0 wrapmargin=0 formatoptions-=t:
+\RequirePackage[l2tabu,orthodox]{nag}
+\documentclass[9pt]{standalone}
+\usepackage{lmodern}
+\usepackage[paperwidth=182mm,paperheight=220mm,margin=0.02in,heightrounded,landscape]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{positioning, fit, calc, arrows.meta, intersections, backgrounds, shapes, decorations.pathreplacing, decorations.markings}
+\usepackage{mathtools}
+\usepackage{circuitikz}
+\usepackage[center,pdflatex,frame]{crop}
+
+% define layers
+\pgfdeclarelayer{foreground}
+\pgfdeclarelayer{background}
+% tell TikZ how to stack them (back to front)
+\pgfsetlayers{background,main,foreground}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+%% the following commands are needed for some matlab2tikz features
+\usetikzlibrary{plotmarks}
+\usetikzlibrary{arrows.meta}
+\usepgfplotslibrary{patchplots}
+\usepackage{grffile}
+\usepackage{amsmath}
+
+%% you may also want the following commands
+%\pgfplotsset{plot coordinates/math parser=false}
+\newlength\figureheight
+\newlength\figurewidth
+\begin{document}
+% This file was created by matlab2tikz.
+%
+%The latest updates can be retrieved from
+%  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
+%where you can also make suggestions and rate matlab2tikz.
+%
+\definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=7.274in,
+height=4.304in,
+at={(1.22in,0.581in)},
+scale only axis,
+xmin=0,
+xmax=100,
+xlabel style={font=\color{white!15!black}},
+xlabel={Cell SOC [\%]},
+ymin=2.5,
+ymax=5,
+ylabel style={font=\color{white!15!black}},
+ylabel={Voltage [V]},
+axis background/.style={fill=white},
+title style={font=\bfseries},
+title={Fictionalised Terminal Voltage}
+% legend cell align=left, align=left, draw=white!15!black}
+]
+\addplot [color=mycolor1, line width=2.0pt]
+  table[row sep=crcr]{%
+0	3.7\\
+100	3.7\\
+};
+% \addlegendentry{data1}
+
+\end{axis}
+\end{tikzpicture}%
+\end{document}

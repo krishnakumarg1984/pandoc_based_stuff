@@ -48,6 +48,7 @@ The discrete-time state-evolution of a continuous-time generic non-linear system
 $x$ represents differential states, $z$ represents algebraic states, $f$ is the state equation, $g$ represents the set of algebraic constraints, $h$ represents the output function, $u$ represents the process noise with co-variance matrix $Q$ and $v$ represents sensor noise with co-variance matrix $R$ respectively.
 
 # Multi-pronged approach (100s of papers)
+## Bayesian Filters
 * Kalman Filter Family
     - Extended Kalman Filter
     - Sigma Point Kalman Filter
@@ -59,3 +60,30 @@ $x$ represents differential states, $z$ represents algebraic states, $f$ is the 
 * Particle Filter
 * PDE Backstepping Observer
 * Feedback Particle Filter
+
+# Challenges from SoC estimation perspective
+* SoC corresponds to just one of the state estimates, $c_{s_{avg}}$ \vfill
+* Terminal Cell Voltage, $v_\mathrm{cell}$, however corresponds to surface concentration at the current collectors\vfill
+* The implications are quite pronounced\vfill
+
+# Observability Loss
+![Idealised Battery Voltage](flat_voltage.pdf){#fig:idealvoltage}
+
+# Which Model to use?
+
+## P2D Model -- Cursory Glance
+* State-Variables: $\phi_s, \phi_e, c_s, c_e$
+* Algebraic B-V equation to compute $j(x,t)$
+
+ . . .
+
+* Finite-Volume/Finite-Difference Discretisation 
+* 10 nodes in through-thickness direction per electrode
+* 3 nodes in separator
+* 10 nodes per per spherical particle (within shell)
+
+* How many state variables do we really have?
+    * The state vector is $266 \times 1$ 
+    * The estimation vector is a scalar !
+
+## Model Accuracy vs Estimation Accuracy
