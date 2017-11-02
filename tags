@@ -4,5 +4,8 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
--slide-level	Makefile	/^	pandoc --slide-level=2 --filter pandoc-numbering --filter pandoc-tablenos --filter pandoc-fignos --filter pandoc-eqnos -t beamer habits.md -V theme:Warsaw --normalize --smart --incremental --toc -s -o habits.pdf$/;"	m
--slide-level	Makefile	/^	pandoc --slide-level=2 --filter pandoc-numbering --filter pandoc-tablenos --filter pandoc-fignos --filter pandoc-eqnos -t beamer kalman_battery.md -V theme:CambridgeUS --normalize --smart --incremental --toc -s -o kalman_battery.pdf$/;"	m
+-slide-level	Makefile	/^	pandoc --filter columnfilter.py --slide-level=1 --filter pandoc-numbering --filter pandoc-tablenos --filter pandoc-fignos --filter pandoc-eqnos -t beamer kalman_battery.md -V theme:Warsaw --normalize --smart --incremental --toc -s -o kalman_battery.pdf --latex-engine=xelatex$/;"	m
+-slide-level	Makefile	/^	pandoc --slide-level=1 --filter pandoc-numbering --filter pandoc-tablenos --filter pandoc-fignos --filter pandoc-eqnos -t beamer habits.md -V theme:Warsaw --normalize --smart --incremental --toc -s -o habits.pdf$/;"	m
+latex	columnfilter.py	/^def latex(s):$/;"	f
+mk_columns	columnfilter.py	/^def mk_columns(k, v, f, m):$/;"	f
+pf	columnfilter.py	/^import pandocfilters as pf$/;"	i
